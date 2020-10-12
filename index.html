@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.11.1/pdf-lib.min.js"></script>
+
+    <title>COVID-19 – Générateur d'attestation</title>
+</head>
+
+
+<body>
+
+<div class="ui placeholder segment">
+
+<form class="ui form">
+
+<div class="field">
+<label>Nom</label>
+<input type="text" name="last-name" placeholder="Nom">
+</div>
+<div class="field">
+<label>Prénom</label>
+<input type="text" name="first-name" placeholder="Prenom">
+</div>
+<div class="field">
+    <label>Grade</label>
+<select class="ui fluid dropdown">
+    <option value="">Grade</option>
+    <option value="1CL">1CL</option>
+    <option value="CPL">CPL</option>
+    <option value="CCH">CCH</option>
+    <option value="SGT">SGT</option>
+    <option value="SCH">SCH</option>
+    <option value="ADJ">ADJ</option>
+    <option value="ADC">ADC</option>
+    <option value="MJR">MJR</option>
+    <option value="SLT">SLT</option>
+    <option value="LTN">LTN</option>
+    <option value="CNE">CNE</option>
+  </select>
+</div>
+<div class="field">
+    <label>Unité</label>
+    <input type="text" name="unit" placeholder="Unité">
+    </div>
+
+
+<button class="ui button" type="submit">Submit</button>
+
+</form>
+
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
+
+async function modifyPdf() {
+
+  const url = 'https://github.com/NicolasVILLETTE/NicolasVILLETTE.github.io/blob/main/certificate.pdf'
+  const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+
+  const pdfDoc = await PDFDocument.load(existingPdfBytes)
+  const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
+
+  const pages = pdfDoc.getPages()
+  const firstPage = pages[0]
+  const { width, height } = firstPage.getSize()
+  firstPage.drawText('This text was added with JavaScript!', {
+    x: 5,
+    y: height / 2 + 300,
+    size: 50,
+    font: helveticaFont,
+    color: rgb(0.95, 0.1, 0.1),
+    rotate: degrees(-45),
+  })
+
+  const pdfBytes = await pdfDoc.save()
+}
+
+modifyPdf();
+
+</script>
+
+<html>
