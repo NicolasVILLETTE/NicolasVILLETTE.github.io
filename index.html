@@ -10,21 +10,31 @@
     <p>Click the button to modify an existing PDF document with <code>pdf-lib</code></p>
     <button onclick="modifyPdf()">Modify PDF</button>
     <p class="small">(Your browser will download the resulting file)</p>
-  </body>
+
 	
-	<div class="form-group">
-	<label>Signature</label>
-	<small id="help-signature" class="form-text text-muted">Dessinez votre signature dans la case ci-dessous.</small>
-	<canvas id="field-signature" width=360 height=240 aria-describedby="help-signature"></canvas>
-	<button id="reset-signature" type="button" class="btn btn-link btn-sm float-right">Effacer la signature</button>
-	<br><br>
+	<div>
+
+	<canvas id="signature_canvas" width=360 height=240 aria-describedby="help-signature"></canvas>
+
 	</div>
+	  
+	  
+	    </body>
 
   <script>
-	  console.log("5");
+	  console.log("6");
+	  
+	  	var canvas = document.querySelector("canvas");
+	var signaturePad = new SignaturePad(canvas, , { minWidth: 1, maxWidth: 3 });
+	  
+	  
+	  
+	  
 	  
     const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
-    const signaturePad = new SignaturePad($('#field-signature'), { minWidth: 1, maxWidth: 3 })
+    
+    
+
 
     async function modifyPdf() {
       // Fetch an existing PDF document
