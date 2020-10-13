@@ -15,7 +15,7 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
-console.log("4");
+console.log("5");
 
 
 
@@ -170,6 +170,30 @@ if (diarrhea_dropdown === '0') {
 firstPage.drawText('X', {
 x: 265,
 y: 440,
+size: 15
+})
+}
+	
+if (contact_dropdown === '1') {
+firstPage.drawText('X', {
+x: 25,
+y: 350,
+size: 15
+})
+}
+
+if (contact_dropdown === '0') {
+firstPage.drawText('X', {
+x: 85,
+y: 350,
+size: 15
+})
+}
+	
+if (text_input !== null) {
+firstPage.drawText(text_input, {
+x: 50,
+y: 285,
 size: 15
 })
 }
