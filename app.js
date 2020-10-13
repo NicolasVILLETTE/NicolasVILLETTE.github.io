@@ -15,6 +15,20 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
+
+
+const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
+
+async function modifyPdf() {
+
+      const url = './certificate.pdf'
+  		const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+      const pdfDoc = await PDFDocument.load(existingPdfBytes)
+      const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
+      const pages = pdfDoc.getPages()
+      const firstPage = pages[0]
+      const { width, height } = firstPage.getSize()
+      
 var lastname_input = $("#lastname_input").val();
 var firstname_input = $("#firstname_input").val();
 var unit_input = $("#unit_input").val();
@@ -29,21 +43,9 @@ var diarrhea_dropdown = $('#diarrhea_dropdown').dropdown('get value');
 
 var contact_dropdown = $('#contact_dropdown').dropdown('get value');
 var text_input = $("#text_input").val();
-
-const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
-
-async function modifyPdf() {
-
-      const url = './certificate.pdf'
-  		const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
-      const pdfDoc = await PDFDocument.load(existingPdfBytes)
-      const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
-      const pages = pdfDoc.getPages()
-      const firstPage = pages[0]
-      const { width, height } = firstPage.getSize()
       
       if (lastname_input !== null) {
-        firstPage.drawText("AJGJGJG", {
+        firstPage.drawText(lastname_input, {
           x: 100,
           y: 676,
           size: 15
@@ -51,7 +53,7 @@ async function modifyPdf() {
       }
       
       if (firstname_input !== null) {
-        firstPage.drawText("kkjkjklk", {
+        firstPage.drawText(firstname_input, {
           x: 100,
           y: 655,
           size: 15
