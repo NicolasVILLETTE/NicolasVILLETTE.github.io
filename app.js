@@ -35,20 +35,20 @@ var contact_dropdown = $('#contact_dropdown').dropdown('get value');
 var text_input = $("#text_input").val();
 
 
-//console.log(lastname_input);
-//console.log(firstname_input);
-//console.log(rank_dropdown);
-//console.log(unit_input);
+console.log(lastname_input);
+console.log(firstname_input);
+console.log(rank_dropdown);
+console.log(unit_input);
 
-//console.log(fever_dropdown);
-//console.log(cough_dropdown);
-//console.log(fatigue_dropdown);
-//console.log(taste_dropdown);
-//console.log(smell_dropdown);
-//console.log(diarrhea_dropdown);
+console.log(fever_dropdown);
+console.log(cough_dropdown);
+console.log(fatigue_dropdown);
+console.log(taste_dropdown);
+console.log(smell_dropdown);
+console.log(diarrhea_dropdown);
 
-//console.log(contact_dropdown);
-//console.log(text_input);
+console.log(contact_dropdown);
+console.log(text_input);
 
 
 });
