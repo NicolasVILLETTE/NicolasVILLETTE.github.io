@@ -15,7 +15,7 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
-console.log("2");
+console.log("3");
 
 
 
@@ -74,6 +74,14 @@ if (unit_input !== null) {
 firstPage.drawText(unit_input, {
 x: 100,
 y: 600,
+size: 15
+})
+}
+	
+if (fever_dropdown === '1') {
+firstPage.drawText('X', {
+x: 175,
+y: 535,
 size: 15
 })
 }
