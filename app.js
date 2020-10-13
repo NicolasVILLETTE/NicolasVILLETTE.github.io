@@ -34,7 +34,7 @@ const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
 
 async function modifyPdf() {
 
-      const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
+      const url = './certificate.pdf'
   		const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
       const pdfDoc = await PDFDocument.load(existingPdfBytes)
       const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
