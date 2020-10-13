@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("17");
+console.log("COUGH");
 
 const {
   degrees,
@@ -122,8 +122,8 @@ async function modifyPdf() {
 
   if (cough_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 165,
-      y: 525,
+      x: 170,
+      y: 510,
       size: 15
     })
   }
@@ -131,14 +131,14 @@ async function modifyPdf() {
   if (cough_dropdown === '0') {
     firstPage.drawText('X', {
       x: 255,
-      y: 515,
+      y: 510,
       size: 15
     })
   }
 
   if (fatigue_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 165,
+      x: 170,
       y: 490,
       size: 15
     })
@@ -154,7 +154,7 @@ async function modifyPdf() {
 
   if (taste_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 165,
+      x: 170,
       y: 470,
       size: 15
     })
@@ -170,7 +170,7 @@ async function modifyPdf() {
 
   if (smell_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 165,
+      x: 170,
       y: 450,
       size: 15
     })
@@ -186,7 +186,7 @@ async function modifyPdf() {
 
   if (diarrhea_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 165,
+      x: 170,
       y: 435,
       size: 15
     })
