@@ -14,7 +14,7 @@ $( "#clear_button" ).on( "click", function() {
 var canvas = document.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas);
 
-console.log("7");
+console.log("1");
 
 const {
   degrees,
@@ -225,6 +225,6 @@ async function modifyPdf() {
 
 
   const pdfBytes = await pdfDoc.save()
-  download(pdfBytes, "certificat_covid_"+lastname+"_"+firstname+".pdf");
+  download(pdfBytes, "certificat_covid_"+lastname_input+"_"+firstname_input+".pdf");
 }
 
