@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("13");
+console.log("14");
 
 const {
   degrees,
@@ -104,16 +104,16 @@ async function modifyPdf() {
 
   if (fever_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 175,
-      y: 535,
+      x: 165,
+      y: 525,
       size: 15
     })
   }
 
   if (fever_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 265,
-      y: 535,
+      x: 255,
+      y: 525,
       size: 15
     })
   }
@@ -121,7 +121,7 @@ async function modifyPdf() {
   if (cough_dropdown === '1') {
     firstPage.drawText('X', {
       x: 175,
-      y: 515,
+      y: 525,
       size: 15
     })
   }
@@ -136,8 +136,8 @@ async function modifyPdf() {
 
   if (fatigue_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 175,
-      y: 500,
+      x: 165,
+      y: 490,
       size: 15
     })
   }
@@ -145,15 +145,15 @@ async function modifyPdf() {
   if (fatigue_dropdown === '0') {
     firstPage.drawText('X', {
       x: 265,
-      y: 500,
+      y: 490,
       size: 15
     })
   }
 
   if (taste_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 175,
-      y: 480,
+      x: 165,
+      y: 470,
       size: 15
     })
   }
@@ -161,39 +161,39 @@ async function modifyPdf() {
   if (taste_dropdown === '0') {
     firstPage.drawText('X', {
       x: 265,
-      y: 480,
+      y: 470,
       size: 15
     })
   }
 
   if (smell_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 175,
-      y: 460,
+      x: 165,
+      y: 450,
       size: 15
     })
   }
 
   if (smell_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 265,
-      y: 460,
+      x: 255,
+      y: 450,
       size: 15
     })
   }
 
   if (diarrhea_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 175,
-      y: 440,
+      x: 165,
+      y: 430,
       size: 15
     })
   }
 
   if (diarrhea_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 265,
-      y: 440,
+      x: 255,
+      y: 430,
       size: 15
     })
   }
