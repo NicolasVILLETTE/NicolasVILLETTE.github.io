@@ -130,7 +130,7 @@ async function modifyPdf() {
 
   if (cough_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 255,
+      x: 260,
       y: 510,
       size: 15
     })
@@ -139,15 +139,15 @@ async function modifyPdf() {
   if (fatigue_dropdown === '1') {
     firstPage.drawText('X', {
       x: 170,
-      y: 490,
+      y: 493,
       size: 15
     })
   }
 
   if (fatigue_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 255,
-      y: 490,
+      x: 260,
+      y: 493,
       size: 15
     })
   }
@@ -155,15 +155,15 @@ async function modifyPdf() {
   if (taste_dropdown === '1') {
     firstPage.drawText('X', {
       x: 170,
-      y: 470,
+      y: 473,
       size: 15
     })
   }
 
   if (taste_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 255,
-      y: 470,
+      x: 260,
+      y: 473,
       size: 15
     })
   }
@@ -171,15 +171,15 @@ async function modifyPdf() {
   if (smell_dropdown === '1') {
     firstPage.drawText('X', {
       x: 170,
-      y: 450,
+      y: 453,
       size: 15
     })
   }
 
   if (smell_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 255,
-      y: 450,
+      x: 260,
+      y: 453,
       size: 15
     })
   }
@@ -187,15 +187,15 @@ async function modifyPdf() {
   if (diarrhea_dropdown === '1') {
     firstPage.drawText('X', {
       x: 170,
-      y: 435,
+      y: 433,
       size: 15
     })
   }
 
   if (diarrhea_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 255,
-      y: 435,
+      x: 260,
+      y: 433,
       size: 15
     })
   }
