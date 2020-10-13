@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("4");
+console.log("5");
 
 const {
   degrees,
@@ -58,6 +58,10 @@ async function modifyPdf() {
   const signatureArrayBuffer = await fetch(signaturePad.toDataURL()).then(res => res.arrayBuffer())
   const signatureImage = await pdfDoc.embedPng(signatureArrayBuffer)
   const signatureDimensions = signatureImage.scale(1 / (signatureImage.width / 110))
+  
+    $( "#clear_button" ).on( "click", function() {
+    signaturePad.clear();
+    });
   
   firstPage.drawImage(signatureImage, {
     x: 25,
