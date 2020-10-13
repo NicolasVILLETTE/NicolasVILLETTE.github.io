@@ -15,7 +15,7 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
-console.log("5");
+console.log("7");
 
 
 
@@ -31,6 +31,9 @@ async function modifyPdf() {
       const firstPage = pages[0]
       const { width, height } = firstPage.getSize()
       
+const creationInstant = new Date();
+const creationDate = creationInstant.toLocaleDateString('fr-FR');
+      
 var lastname_input = $("#lastname_input").val();
 var firstname_input = $("#firstname_input").val();
 var unit_input = $("#unit_input").val();
@@ -45,6 +48,23 @@ var diarrhea_dropdown = $('#diarrhea_dropdown').dropdown('get value');
 
 var contact_dropdown = $('#contact_dropdown').dropdown('get value');
 var text_input = $("#text_input").val();
+	
+const signatureArrayBuffer = await fetch(signaturePad.toDataURL()).then(res => res.arrayBuffer())
+const signatureImage = await pdfDoc.embedPng(signatureArrayBuffer)
+const signatureDimensions = signatureImage.scale(1 / (signatureImage.width / 80))
+
+firstPage.drawImage(signatureImage, {
+x: 25,
+y: 85,
+width: signatureDimensions.width,
+height: signatureDimensions.height,
+})
+	
+firstPage.drawText(creationDate, {
+x: 175,
+y: 140,
+size: 15
+})
       
 if (lastname_input !== null) {
 firstPage.drawText(lastname_input, {
