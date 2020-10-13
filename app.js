@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("14");
+console.log("15");
 
 const {
   degrees,
@@ -57,11 +57,13 @@ async function modifyPdf() {
 
   const signatureArrayBuffer = await fetch(signaturePad.toDataURL()).then(res => res.arrayBuffer())
   const signatureImage = await pdfDoc.embedPng(signatureArrayBuffer)
-  const signatureDimensions = signatureImage.scale(1 / (signatureImage.width / 40))
-
+  const signatureDimensions = signatureImage.scale(1 / (signatureImage.width / 110))
+  
   firstPage.drawImage(signatureImage, {
     x: 25,
-    y: 85
+    y: 85,
+    width: signatureDimensions.width,
+    height: signatureDimensions.height,
   })
 
   firstPage.drawText(creationDate, {
