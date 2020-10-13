@@ -106,16 +106,16 @@ async function modifyPdf() {
 
   if (fever_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 165,
-      y: 525,
+      x: 170,
+      y: 530,
       size: 15
     })
   }
 
   if (fever_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 255,
-      y: 525,
+      x: 260,
+      y: 530,
       size: 15
     })
   }
