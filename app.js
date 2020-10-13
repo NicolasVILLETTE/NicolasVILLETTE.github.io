@@ -10,12 +10,12 @@ $('#contact_dropdown').dropdown();
 var canvas = document.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas);
 
-var clear_button = $('#clear_button');
-clear_button.on('click', function() {
-  signaturePad.clear();
+document.getElementById('clear_button').addEventListener("click", function (event) {
+    signaturePad.clear();
+    return false;
 });
 
-console.log("9");
+console.log("11");
 
 const {
   degrees,
