@@ -1,5 +1,3 @@
-const { PDFDocument, StandardFonts } = PDFLib
-
 $('#rank_dropdown').dropdown();
 $('#fever_dropdown').dropdown();
 $('#cough_dropdown').dropdown();
@@ -17,10 +15,6 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
-
-var test_button = $('#testbutton');
-test_button.on('click', function() {
-
 var lastname_input = $("#lastname_input").val();
 var firstname_input = $("#firstname_input").val();
 var unit_input = $("#unit_input").val();
@@ -36,23 +30,39 @@ var diarrhea_dropdown = $('#diarrhea_dropdown').dropdown('get value');
 var contact_dropdown = $('#contact_dropdown').dropdown('get value');
 var text_input = $("#text_input").val();
 
+const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
 
-console.log(lastname_input);
-console.log(firstname_input);
-console.log(rank_dropdown);
-console.log(unit_input);
+async function modifyPdf() {
 
-console.log(fever_dropdown);
-console.log(cough_dropdown);
-console.log(fatigue_dropdown);
-console.log(taste_dropdown);
-console.log(smell_dropdown);
-console.log(diarrhea_dropdown);
+      const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
+  		const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+      const pdfDoc = await PDFDocument.load(existingPdfBytes)
+      const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
+      const pages = pdfDoc.getPages()
+      const firstPage = pages[0]
+      const { width, height } = firstPage.getSize()
+      
+      if (lastname_input) {
+        firstPage.drawText(lastname_input, {
+          x: 100,
+          y: 676,
+          size: 15
+        })
+      }
+      
+      if (firstname_input) {
+        firstPage.drawText(firstname_input, {
+          x: 100,
+          y: 655,
+          size: 15
+        })
+      }
 
-console.log(contact_dropdown);
-console.log(text_input);
+      // Serialize the PDFDocument to bytes (a Uint8Array)
+      const pdfBytes = await pdfDoc.save()
 
-
-});
+			// Trigger the browser to download the PDF document
+      download(pdfBytes, "certificate_covid.pdf", "application/pdf");
+    }
 
 
