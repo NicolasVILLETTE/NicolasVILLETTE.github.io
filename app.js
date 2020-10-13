@@ -15,7 +15,7 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
-console.log("3");
+console.log("4");
 
 
 
@@ -82,6 +82,94 @@ if (fever_dropdown === '1') {
 firstPage.drawText('X', {
 x: 175,
 y: 535,
+size: 15
+})
+}
+	
+if (fever_dropdown === '0') {
+firstPage.drawText('X', {
+x: 265,
+y: 535,
+size: 15
+})
+}
+	
+if (cough_dropdown === '1') {
+firstPage.drawText('X', {
+x: 175,
+y: 515,
+size: 15
+})
+}
+
+if (cough_dropdown === '0') {
+firstPage.drawText('X', {
+x: 265,
+y: 515,
+size: 15
+})
+}
+	
+if (fatigue_dropdown === '1') {
+firstPage.drawText('X', {
+x: 175,
+y: 500,
+size: 15
+})
+}
+
+if (fatigue_dropdown === '0') {
+firstPage.drawText('X', {
+x: 265,
+y: 500,
+size: 15
+})
+}
+	
+if (taste_dropdown === '1') {
+firstPage.drawText('X', {
+x: 175,
+y: 480,
+size: 15
+})
+}
+
+if (taste_dropdown === '0') {
+firstPage.drawText('X', {
+x: 265,
+y: 480,
+size: 15
+})
+}
+	
+if (smell_dropdown === '1') {
+firstPage.drawText('X', {
+x: 175,
+y: 460,
+size: 15
+})
+}
+
+if (smell_dropdown === '0') {
+firstPage.drawText('X', {
+x: 265,
+y: 460,
+size: 15
+})
+}
+	
+if (diarrhea_dropdown === '1') {
+firstPage.drawText('X', {
+x: 175,
+y: 440,
+size: 15
+})
+}
+
+if (diarrhea_dropdown === '0') {
+firstPage.drawText('X', {
+x: 265,
+y: 440,
 size: 15
 })
 }
