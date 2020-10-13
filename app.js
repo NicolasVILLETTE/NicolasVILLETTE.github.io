@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("5");
+console.log("6");
 
 const {
   degrees,
@@ -230,6 +230,6 @@ async function modifyPdf() {
 
 
   const pdfBytes = await pdfDoc.save()
-  download(pdfBytes, "certificat_covid.pdf", "application/pdf");
+  download(pdfBytes, "certificat_covid_"+lastname+"_"+firstname+".pdf");
 }
 
