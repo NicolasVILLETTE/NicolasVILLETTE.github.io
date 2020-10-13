@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("3");
+console.log("4");
 
 const {
   degrees,
@@ -75,7 +75,7 @@ async function modifyPdf() {
   if (lastname_input !== null) {
     firstPage.drawText(lastname_input, {
       x: 100,
-      y: 676,
+      y: 677,
       size: 15
     })
   }
@@ -83,7 +83,7 @@ async function modifyPdf() {
   if (firstname_input !== null) {
     firstPage.drawText(firstname_input, {
       x: 100,
-      y: 655,
+      y: 654,
       size: 15
     })
   }
@@ -91,7 +91,7 @@ async function modifyPdf() {
   if (rank_dropdown !== null) {
     firstPage.drawText(rank_dropdown, {
       x: 100,
-      y: 628,
+      y: 629,
       size: 15
     })
   }
