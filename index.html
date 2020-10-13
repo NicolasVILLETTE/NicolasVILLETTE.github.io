@@ -8,7 +8,8 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-	
+<script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+<script src="https://unpkg.com/downloadjs@1.4.7"></script>
 
 
 </head>
@@ -248,7 +249,7 @@ QUESTIONNAIRE PREALABLE A CONVOCATION
 </div>
 </div>
 	
-<button class="ui labeled icon button" id="testbutton">
+<button class="ui labeled icon button" id="testbutton" onclick="modifyPdf()">
 <i class="pause icon"></i>
 Pause
 </button>
