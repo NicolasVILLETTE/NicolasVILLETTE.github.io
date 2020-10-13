@@ -43,7 +43,7 @@ async function modifyPdf() {
       const { width, height } = firstPage.getSize()
       
       if (lastname_input !== null) {
-        firstPage.drawText(lastname_input, {
+        firstPage.drawText("AJGJGJG", {
           x: 100,
           y: 676,
           size: 15
@@ -51,7 +51,7 @@ async function modifyPdf() {
       }
       
       if (firstname_input !== null) {
-        firstPage.drawText(firstname_input, {
+        firstPage.drawText("kkjkjklk", {
           x: 100,
           y: 655,
           size: 15
