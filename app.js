@@ -7,15 +7,14 @@ $('#smell_dropdown').dropdown();
 $('#diarrhea_dropdown').dropdown();
 $('#contact_dropdown').dropdown();
 
+$( "#clear_button" ).on( "click", function() {
+  signaturePad.clear();
+});
+
 var canvas = document.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas);
 
-document.getElementById('clear_button').addEventListener("click", function (event) {
-    signaturePad.clear();
-    return false;
-});
-
-console.log("6");
+console.log("7");
 
 const {
   degrees,
@@ -58,10 +57,6 @@ async function modifyPdf() {
   const signatureArrayBuffer = await fetch(signaturePad.toDataURL()).then(res => res.arrayBuffer())
   const signatureImage = await pdfDoc.embedPng(signatureArrayBuffer)
   const signatureDimensions = signatureImage.scale(1 / (signatureImage.width / 110))
-  
-    $( "#clear_button" ).on( "click", function() {
-    signaturePad.clear();
-    });
   
   firstPage.drawImage(signatureImage, {
     x: 25,
