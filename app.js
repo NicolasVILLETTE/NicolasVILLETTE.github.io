@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("15");
+console.log("16");
 
 const {
   degrees,
@@ -122,7 +122,7 @@ async function modifyPdf() {
 
   if (cough_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 175,
+      x: 165,
       y: 525,
       size: 15
     })
@@ -130,7 +130,7 @@ async function modifyPdf() {
 
   if (cough_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 265,
+      x: 255,
       y: 515,
       size: 15
     })
@@ -146,7 +146,7 @@ async function modifyPdf() {
 
   if (fatigue_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 265,
+      x: 255,
       y: 490,
       size: 15
     })
@@ -162,7 +162,7 @@ async function modifyPdf() {
 
   if (taste_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 265,
+      x: 255,
       y: 470,
       size: 15
     })
@@ -187,7 +187,7 @@ async function modifyPdf() {
   if (diarrhea_dropdown === '1') {
     firstPage.drawText('X', {
       x: 165,
-      y: 430,
+      y: 435,
       size: 15
     })
   }
@@ -195,7 +195,7 @@ async function modifyPdf() {
   if (diarrhea_dropdown === '0') {
     firstPage.drawText('X', {
       x: 255,
-      y: 430,
+      y: 435,
       size: 15
     })
   }
@@ -203,15 +203,15 @@ async function modifyPdf() {
   if (contact_dropdown === '1') {
     firstPage.drawText('X', {
       x: 25,
-      y: 350,
+      y: 345,
       size: 15
     })
   }
 
   if (contact_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 85,
-      y: 350,
+      x: 80,
+      y: 345,
       size: 15
     })
   }
