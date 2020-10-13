@@ -202,16 +202,16 @@ async function modifyPdf() {
 
   if (contact_dropdown === '1') {
     firstPage.drawText('X', {
-      x: 25,
-      y: 350,
+      x: 22,
+      y: 347,
       size: 15
     })
   }
 
   if (contact_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 75,
-      y: 350,
+      x: 80,
+      y: 347,
       size: 15
     })
   }
