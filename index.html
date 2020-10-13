@@ -12,98 +12,246 @@
 
 </head>
 
-  <body>
-	  
-	  
-<div class="ui placeholder segment">
-	
-<div>
-<canvas id="signature_canvas" width=500 height=240 aria-describedby="help-signature"></canvas>
-</div>
+<body style="background-color: #DADADA;">
 
-</div>
-	  
-<button class="ui button" onclick="modifyPdf()>Télécharger</button>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+      <div class="content">
+QUESTIONNAIRE PREALABLE A CONVOCATION
 
-
-	
-
-	  
-	  
-	    </body>
-
-  <script>
-	  console.log("7");
-	  
-	  	var canvas = document.querySelector("canvas");
-	var signaturePad = new SignaturePad(canvas, { minWidth: 1, maxWidth: 3 });
-	  
-	  
-	  
-	  
-	  
-    const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
-    
-    
-
-
-    async function modifyPdf() {
-      // Fetch an existing PDF document
-      const url = '/certificate.pdf'
-  		const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
-
-      // Load a PDFDocument from the existing PDF bytes
-      const pdfDoc = await PDFDocument.load(existingPdfBytes)
-
-      // Embed the Helvetica font
-      const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
-
-      // Get the first page of the document
-      const pages = pdfDoc.getPages()
-      const firstPage = pages[0]
-
-      // Get the width and height of the first page
-      const { width, height } = firstPage.getSize()
+      </div>
       
-      console.log(width);
-      console.log(height);
+      <div class="ui raised segment">
+      <div class="ui top attached label">IDENTITE</div>
+      
 
-      // Draw a string of text diagonally across the first page
-      firstPage.drawText('X', {
-        x: 175,
-        y: 439,
-        size: 15
-      })
-	    
-	firstPage.drawText('AGNUS', {
-	x: 100,
-	y: 676,
-	size: 15
-	})
-	    
-	firstPage.drawText('Nicolas', {
-	x: 100,
-	y: 655,
-	size: 15
-	})
-	    
-	firstPage.drawText('1CL', {
-	x: 100,
-	y: 630,
-	size: 15
-	})
-	    
-	firstPage.drawText('SK', {
-	x: 100,
-	y: 605,
-	size: 15
-	})
+      
+        <form class="ui form">
+      
+       <div class="field">
+      
+        <div class="ui input">
+          <input type="text" placeholder="Nom" id="lastname_input">
+        </div>
+        </div>
+        
+         <div class="field">
+        
+                <div class="ui input">
+          <input type="text" placeholder="Prénom" id="firstname_input">
+        </div>
+        </div>
+        
+         <div class="field">
 
-      // Serialize the PDFDocument to bytes (a Uint8Array)
-      const pdfBytes = await pdfDoc.save()
+  <div class="ui selection dropdown" id="rank_dropdown">
+  <input type="hidden" name="rank">
+  <i class="dropdown icon"></i>
+  <div class="default text">Grade</div>
+  <div class="menu">
+    <div class="item" data-value="CNE">CNE</div>
+    <div class="item" data-value="LTN">LTN</div>
+    <div class="item" data-value="SLT">SLT</div>
+    <div class="item" data-value="MJR">MJR</div>
+    <div class="item" data-value="ADC">ADC</div>
+    <div class="item" data-value="ADJ">ADJ</div>
+    <div class="item" data-value="SCH">SCH</div>
+    <div class="item" data-value="SGT">SGT</div>
+    <div class="item" data-value="CCH">CCH</div>
+    <div class="item" data-value="CPL">CPL</div>
+    <div class="item" data-value="1CL">1CL</div>
+    <div class="item" data-value="SDT">SDT</div>
+  </div>
+</div>
 
-			// Trigger the browser to download the PDF document
-      download(pdfBytes, "pdf-lib_modification_example.pdf", "application/pdf");
-    }
-  </script>
+</div>
+        
+         <div class="field">
+                        <div class="ui input">
+          <input type="text" placeholder="Unité" id="unit_input">
+        </div>
+        </div>
+
+
+
+</form>
+
+</div>
+</div>
+</div>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+  <div class="ui raised segment">
+  <div class="ui top attached label">RESSENTEZ-VOUS LES SIGNES SUIVANTS ?</div>
+  
+  <form class="ui form">
+  
+  <div class="field">
+  
+  <div class="ui selection dropdown" id="fever_dropdown">
+  <input type="hidden" name="fever">
+  <i class="dropdown icon"></i>
+  <div class="default text">Fièvre</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+ <div class="field">
+
+  <div class="ui selection dropdown" id="cough_dropdown">
+  <input type="hidden" name="cough">
+  <i class="dropdown icon"></i>
+  <div class="default text">Toux</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+ <div class="field">
+
+  <div class="ui selection dropdown" id="fatigue_dropdown">
+  <input type="hidden" name="fatigue">
+  <i class="dropdown icon"></i>
+  <div class="default text">Fatigue anormale</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+ <div class="field">
+
+  <div class="ui selection dropdown" id="taste_dropdown">
+  <input type="hidden" name="taste">
+  <i class="dropdown icon"></i>
+  <div class="default text">Perte du goût</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+ <div class="field">
+
+  <div class="ui selection dropdown" id="smell_dropdown">
+  <input type="hidden" name="smell">
+  <i class="dropdown icon"></i>
+  <div class="default text">Perte de l'odorat</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+ <div class="field">
+
+  <div class="ui selection dropdown" id="diarrhea_dropdown">
+  <input type="hidden" name="diarrhea">
+  <i class="dropdown icon"></i>
+  <div class="default text">Diarrhée</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+</form>
+
+</div>
+</div>
+</div>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+      
+    <div class="ui raised segment">
+      <div class="ui top attached label">DANS LES 14 DERNIERS JOURS, AVEZ-VOUS ÉTÉ EN CONTACT AVEC UNE PERSONNE PRÉSENTANT LES SYMPTÔMES LISTÉS CI-DESSUS ?</div>
+
+      <form class="ui form">
+
+ <div class="field">
+
+  <div class="ui selection dropdown" id="contact_dropdown">
+  <input type="hidden" name="contact">
+  <i class="dropdown icon"></i>
+  <div class="default text">Réponse</div>
+  <div class="menu">
+    <div class="item" data-value="1">Oui</div>
+    <div class="item" data-value="0">Non</div>
+  </div>
+</div>
+
+</div>
+
+<div class="field">
+    <label>Si oui, où et quand ?</label>
+    <textarea rows="2" style="margin-top: 0px; margin-bottom: 0px; height: 58px;"></textarea>
+  </div>
+
+</form>
+
+</div>
+</div>
+</div>
+
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+      
+    <div class="ui raised segment">
+      <div class="ui top attached label">SIGNATURE</div>
+
+<form class="ui form">
+
+<div class="field">
+  
+  <div class="ui segment">
+  <canvas id="signature_canvas" width=600 height=240></canvas>
+</div>
+
+  
+</div>
+
+
+
+
+      <div class="field">
+      
+<button class="ui labeled icon button" id="clear_button" on>
+  <i class="trash icon"></i>
+  Effacer
+</button>
+      </div>
+      
+      
+
+</form>
+
+</div>
+</div>
+</div>
+	
+<button class="ui labeled icon button" id="testbutton">
+<i class="pause icon"></i>
+Pause
+</button>
+
+
+</body>
 </html>
