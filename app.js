@@ -1,3 +1,5 @@
+import pdfBase from './certificate.pdf'
+
 $('#rank_dropdown').dropdown();
 $('#fever_dropdown').dropdown();
 $('#cough_dropdown').dropdown();
