@@ -15,7 +15,7 @@ document.getElementById('clear_button').addEventListener("click", function (even
     return false;
 });
 
-console.log("1");
+console.log("2");
 
 const {
   degrees,
@@ -210,8 +210,8 @@ async function modifyPdf() {
 
   if (contact_dropdown === '0') {
     firstPage.drawText('X', {
-      x: 80,
-      y: 345,
+      x: 75,
+      y: 350,
       size: 15
     })
   }
