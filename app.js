@@ -15,7 +15,7 @@ clear_button.on('click', function() {
   signaturePad.clear();
 });
 
-console.log("8");
+console.log("9");
 
 const {
   degrees,
@@ -61,9 +61,7 @@ async function modifyPdf() {
 
   firstPage.drawImage(signatureImage, {
     x: 25,
-    y: 85,
-    width: signatureDimensions.width,
-    height: signatureDimensions.height,
+    y: 85
   })
 
   firstPage.drawText(creationDate, {
