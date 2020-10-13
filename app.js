@@ -15,6 +15,8 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
+console.log("1");
+
 
 
 const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
