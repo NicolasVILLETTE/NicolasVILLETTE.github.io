@@ -15,7 +15,7 @@ clear_button.on('click', function() {
     signaturePad.clear();
 });
 
-console.log("1");
+console.log("2");
 
 
 
@@ -46,27 +46,43 @@ var diarrhea_dropdown = $('#diarrhea_dropdown').dropdown('get value');
 var contact_dropdown = $('#contact_dropdown').dropdown('get value');
 var text_input = $("#text_input").val();
       
-      if (lastname_input !== null) {
-        firstPage.drawText(lastname_input, {
-          x: 100,
-          y: 676,
-          size: 15
-        })
-      }
-      
-      if (firstname_input !== null) {
-        firstPage.drawText(firstname_input, {
-          x: 100,
-          y: 655,
-          size: 15
-        })
-      }
+if (lastname_input !== null) {
+firstPage.drawText(lastname_input, {
+x: 100,
+y: 676,
+size: 15
+})
+}
 
-      // Serialize the PDFDocument to bytes (a Uint8Array)
-      const pdfBytes = await pdfDoc.save()
+if (firstname_input !== null) {
+firstPage.drawText(firstname_input, {
+x: 100,
+y: 655,
+size: 15
+})
+}
 
-			// Trigger the browser to download the PDF document
-      download(pdfBytes, "certificate_covid.pdf", "application/pdf");
-    }
+if (rank_dropdown !== null) {
+firstPage.drawText(rank_dropdown, {
+x: 100,
+y: 628,
+size: 15
+})
+}
+	
+if (unit_input !== null) {
+firstPage.drawText(unit_input, {
+x: 100,
+y: 600,
+size: 15
+})
+}
+
+// Serialize the PDFDocument to bytes (a Uint8Array)
+const pdfBytes = await pdfDoc.save()
+
+// Trigger the browser to download the PDF document
+download(pdfBytes, "certificate_covid.pdf", "application/pdf");
+}
 
 
